@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhishek Sharma - Data Analyst Portfolio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #96c4e1;
+            color: #000504;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #96c4e1;
+            color: #fff;
+            padding: 2px 0;
+            text-align: center;
+            position: relative;
+        }
+        header .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto;
+            border: 10px solid #fff;
+        }
+        header .profile-pic img {
+            width: 110%;
+            height: 99%;
+            object-fit: cover;
+        }
+        header h1 {
+            margin: 5px 0 2px 0;
+            font-size: 2em;
+        }
+        header p {
+            margin: 0;
+            font-size: 1.2em;
+        }
+        nav {
+            background: #ecb9b9;
+            padding: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        nav ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 30px;
+        }
+        nav ul li a {
+            color: #060606;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .showcase {
+            background: url('unnamed.jpg.jpg') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            position: relative;
+        }
+        .showcase::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(86, 85, 87, 0.5);
+        }
+        .showcase .content {
+            z-index: 1;
+            text-align: center;
+        }
+        .showcase h1 {
+            font-size: 3em;
+            margin-bottom: 0.5em;
+        }
+        .showcase p {
+            font-size: 1.5em;
+        }
+        #main {
+            padding: 20px 0;
+        }
+        #projects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .project {
+            background: #ecb9b9;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 50px;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+            width: calc(25% - 20px);
+        }
+        .project:hover {
+            transform: translateY(-5px);
+        }
+        .project img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        .project h3 {
+            margin: 10px;
+            font-size: 1.2em;
+            color: #4a4a72;
+        }
+        .project p {
+            margin: 10px;
+            font-size: 1em;
+            color: #666;
+        }
+        .project a {
+            display: block;
+            margin: 10px;
+            padding: 5px;
+            text-align: center;
+            background: #4a4a72;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: background 0.3s ease-in-out;
+        }
+        .project a:hover {
+            background: #373764;
+        }
+        #about {
+            padding: 40px 0;
+        }
+        #about h2, #contact h2, #certificate h2 {
+            text-align: center;
+            margin-top: 60px;
+        }
+        #about p {
+            margin: 10px;
+            font-size: 1em;
+            color: #666;
+        }
+        footer {
+            background: #4a4a72;
+            color: #f8f4f4;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+        footer p {
+            margin: 0;
+        }
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 20px;
+        }
+        .contact-links a {
+            display: flex;
+            align-items: center;
+            color: #0a0a0a;
+            text-decoration: none;
+            font-size: 1em;
+        }
+        .contact-links img {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+        }
+        #about .about-info {
+            display: row;
+            flex-direction: column;
+            align-items: center;
+        }
+        #about .about-info p {
+            margin: 5px 0;
+        }
+        .certificates {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .certificate {
+            background: #ecb9b9;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+            width: calc(33% - 20px);
+            text-align: center;
+        }
+        .certificate img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .certificate h3 {
+            margin: 10px;
+            font-size: 1em;
+            color: #4a4a72;
+        }
+        .certificate a {
+            display: block;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            background: #4a4a72;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: background 0.3s ease-in-out;
+        }
+        .certificate a:hover {
+            background: #373764;
+        }
+        @media (max-width: 768px) {
+            .project, .certificate {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="profile-pic">
+            <img src="unnamed.jpg" alt="Profile Picture">
+        </div>
+        <h1>ABHISHEK SHARMA</h1>
+        <p>Data Analyst/Business Analyst</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certificate">Certificates</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="Abhishek-Sharma(DA).pdf" target="_blank">Resume</a></li>
+        </ul>
+    </nav>
+    <section class="showcase">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Discover my projects and experience in data analysis.</p>
+        </div>
+    </section>
+    <div id="main" class="container">
+        <h2 style="text-align: center; margin-top: 40px;">Projects</h2>
+        <section id="projects">
+            <div class="project">
+                <img src="Zomato.D1.png" alt="Zomato Analysis">
+                <h3>ZOMATO ANALYSIS</h3>
+                <p>Conducted comprehensive Zomato data analysis, including cleaning, modeling, and 
+                    visualization. 
+                    Overcame challenges in modeling....</p>
+                <a href="https://www.linkedin.com/in/abhishek-sharma-36b7042bb" target="_blank">Read More</a>
+            </div>
+            <div class="project">
+                <img src="Pizza sales analysis.png" alt="Pizza Sales Analysis">
+                <h3>PIZZA SALES ANALYSIS</h3>
+                <p>Analyzed 21,350 total orders, resulting in a notable 10% overall revenue growth.Highest-Priced Pizza and Common Size: Identified the highest-priced....</p>
+                <a href="https://www.linkedin.com/in/abhishek-sharma-36b7042bb" target="_blank">Read More</a>
+            </div>
+            <div class="project">
+                <img src="Screenshot 2024-06-19 171138.png" alt="Students Result Analysis">
+                <h3>STUDENTS RESULT ANALYSIS</h3>
+                <p>Performed data analysis to investigate student marks, focusing on weekly study hours, parental education, and sports....</p>
+                <a href="https://www.linkedin.com/in/abhishek-sharma-36b7042bb" target="_blank">Read More</a>
+            </div>
+            <div class="project">
+                <img src="HR employee Dash 2.png" alt="HR Retention Analysis">
+                <h3>HR EMPLOYEE RETENTION ANALYSIS</h3>
+                <p>Deep dive into employee attrition, including factors such as job dissatisfaction and lack of career growth opportunities....</p>
+                <a href="https://www.linkedin.com/in/abhishek-sharma-36b7042bb" target="_blank">Read More</a>
+            </div>
+        </section>
+    </div>
+    <section id="about" class="container">
+        <h2>About Me</h2>
+        <div class="about-info">
+            <p><span style="font-weight: italic; color: #f1eef1;">As a dedicated Data Analyst, I thrive on transforming complex data into meaningful insights that drive strategic decisions. My journey in the field has been fueled by a deep curiosity and a commitment to uncovering patterns and trends that can positively impact business outcomes.</span></p>
+            <p><span style="font-weight: italic; color: #f1eef1;">With hands-on experience in various Projects of data analysis, I excel at not only interpreting data but also presenting it in a clear and compelling manner to stakeholders. My analytical approach and attention to detail have consistently enabled me to provide actionable insights that enhance decision-making processes and contribute to overall business success.</span></p>
+            <p><span style="font-weight: italic; color: #f1eef1;">I am passionate about continuously learning and staying updated with the latest advancements in data analysis to deliver the best results. My experience includes working on diverse projects that have honed my ability to tackle challenges and deliver impactful results.</span></p>
+            <p><span style="font-weight: bold; color: #121213;">Job Profile:</span> Data Analyst (Executive)</p>
+            <p><span style="font-weight: bold; color: #121213;">Experience:</span> 1 year</p>
+            
+            <p><span style="font-weight: bold; color: #202024;">Company Name:</span> Flipkart</p>
+            <p><span style="font-weight: bold; color: #1e1e22;">Domain:</span> Supply chain</p>
+            <p><span style="font-weight: bold; color: #1b1b1e;">Total Projects:</span> 10+</p>
+            <p><span style="font-weight: bold; color: #1e1e21;">BI Tools:</span> Power BI, Tableau</p>
+            <p><span style="font-weight: bold; color: #1c1c1f;">Other Skills:</span> MySQL, Python (Pandas,Numpy,Matplotlib,Seaborn), Advanced Excel</p>
+            <p><span style="font-weight: bold; color: #1c1c1f;">Soft Skills:</span> Critical Thinking, Problem-Solving, Attention to Detail, Teamwork Ability</p>
+            <p><span style="font-weight: bold; color: #1b1b1e;">Education:</span> Master of Arts, Advanced Diploma in Information Technology</p>
+            
+            <p><span style="font-weight: bold; color: #161618;">Interests:</span> Traveling, Gaming</p>
+            
+            <p><a href="Abhishek-Sharma(DA).pdf" target="_blank">View Resume</a></p>
+        </div>
+    </section>
+    <section id="certificate" class="container">
+        <h2>Certificates</h2>
+        <div class="certificates">
+            <div class="certificate">
+                <img src="Data analyst excel r.png" alt="Certificate 1">
+                <h3><a href="https://drive.google.com/file/d/1TVSvpvR9hkFhqWgaSwtg2ssaOezqYzpn/view?usp=sharing" target="_blank">Data Analyst Certificate From ExcelR</a></h3>
+            </div>
+            <div class="certificate">
+                <img src="nass.png" alt="Certificate 2">
+                <h3><a href="https://drive.google.com/file/d/1eVk452sTHjSpnmam1wkOTNykacX8DmCr/view?usp=sharing" target="_blank">Data Analyst Certificate From Nasscom</a></h3>
+            </div>
+            <div class="certificate">
+                <img src="SQL Intermediate.png" alt="Certificate 3">
+                <h3><a href="https://www.hackerrank.com/certificates/d13acf3b4d66" target="_blank">SQL Intermediate Certificate From HackerRank</a></h3>
+            </div>
+            <div class="certificate">
+                <img src="python.png" alt="Certificate 4">
+                <h3><a href="https://drive.google.com/file/d/1s7nHpcxVsCSPUXsTI4-6JMHsbQ5W2OVB/view?usp=sharing" target="_blank">Data Analysis with Python From Cognitiveclass.ai Powered By IBM</a></h3>
+            </div>
+            <div class="certificate">
+                <img src="sql.png" alt="Certificate 5">
+                <h3><a href="https://drive.google.com/file/d/15QYtFuPCDCiLA--Yoiip0L_E7viQ2cMS/view?usp=sharing" target="_blank">SQL and Relational Database 101 From Cognitiveclass.ai Powered By IBM</a></h3>
+            </div>
+            <div class="certificate">
+                <img src="cisco.png" alt="Certificate 6">
+                <h3><a href="https://drive.google.com/file/d/1AgAVAXV-N5iDAA5H-0jEyajtOoFP2mVE/view?usp=sharing" target="_blank">Data Analytics Essentials Certificate From CISCO Networking Academy</a></h3>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="container">
+        <h2>Contact</h2>
+        <div class="contact-links">
+            <a href="https://www.linkedin.com/in/abhishek-sharma-36b7042bb" target="_blank">
+                <img src="link.png" alt="LinkedIn"> LinkedIn
+            </a>
+            <a href="https://github.com/Abhisheksharma128900" target="_blank">
+                <img src="git.png" alt="GitHub"> GitHub
+            </a>
+            <a href="tel:+918006164261">
+                <img src="pp.jpeg" alt="Phone"> +918006164261
+            </a>
+            <a href="mailto:sharmaabhishhek128900@gmail.com">
+                <img src="email.png" alt="Email"> sharmaabhishhek128900@gmail.com
+            </a>
+        </div>
+    </section>
+    <footer>
+        <p>Data Analyst Portfolio &copy; 2024</p>
+    </footer>
+</body>
+</html>
